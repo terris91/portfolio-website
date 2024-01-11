@@ -1,0 +1,141 @@
+<script>
+export default {
+  data() {
+    return {
+      activeTab: 1,
+      items: [
+        {
+          id: 1,
+          name: 'Personal Website',
+          imageUrl: 'https://i.imgur.com/TMNHek7.png',
+          status: 'My personal website, I created this website to display my profile, skills and projects. As well as my place to try new technology.',
+          tech: 'VueJS 3, Tailwind',
+          github: 'null',
+          demo: 'https://elncqmelhhcm.click/'
+        },
+        {
+          id: 2,
+          name: 'Telegram Captcha Bot',
+          imageUrl: 'https://i.imgur.com/fsBhqUO.png',
+          status: 'A simple bot using reCaptcha. You have to pass the captcha challenge to join the group (or something lke that).',
+          tech: 'Python',
+          github: 'https://github.com/terris91/Bot-captcha-Tele',
+          demo: 'https://github.com/terris91/Bot-captcha-Tele'
+        },
+        {
+          id: 3,
+          name: 'Messenger Bot',
+          imageUrl: 'https://i.imgur.com/QsIpbI3.png',
+          status: 'You probably know about it, a Messenger bot. It has a lot of commands, and you can add it to a group chat to use.',
+          tech: 'Javascript, HTML',
+          github: 'https://github.com/m1raibot/miraiv2',
+          demo: 'https://facebook.com/terris.real'
+        },
+        {
+          id: 4,
+          name: 'Youtube Premium',
+          imageUrl: 'https://i.imgur.com/v9RpVNw.png',
+          status: 'I make this YouTube Premium subcription in many accounts like 1 month, 4 months, 12 months by using credit cards from other people, some people who are unlucky and lose their money. Dont ask me about this :)',
+          tech: 'Carding, Binning',
+          github: 'null',
+          demo: 'null'
+        },
+        {
+          id: 5,
+          name: 'Tool',
+          imageUrl: 'https://i.imgur.com/WZlB3bY.png',
+          status: 'Yeah, i dont have to pay any payment to watch films on Netflix and listen to music on Spotify. I used accounts of other people. Some are changed mail and password by me (but they still got chance to get it back), I change into mine and use it or give it to my friend (not selling).',
+          tech: 'Script Kiddie',
+          github: 'null',
+          demo: 'null'
+        }
+      ]
+    };
+  }
+}
+</script>
+<template>
+  <div class="px-5 py-5 md:px-12 md:py-10 text-left text-amber-50 mx-3">
+    <article data-page="about">
+      <header>
+        <div
+          class="text-2xl font-bold text-white mb-10 fadein-bot title-section flex items-center justify-center flex-col">
+          <!-- <div class="h-[1px] w-10 bg-amber-200 md:w-20 aos-init aos-animate"></div> -->
+          <h4>Past Project Experience</h4>
+          <h4 class="text-base font-normal text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-amber-300">
+            Explore the projects I've worked on so far</h4>
+        </div>
+      </header>
+      <section>
+        <div>
+          <div class="grid grid-cols-1 gap-4 pb-32 md:grid-cols-3 md:gap-3 xl:grid-cols-3 xl:gap-3 2xl:gap-5 fade-zoom-in">
+            <div v-for="item in items" :key="item.id">
+              <div
+                class="item-card flex flex-col items-center gap-2 rounded bg-[#1e1e1f] hover:bg-[#282828] border border-[#383838] rounded-xl text-amber-50 md:gap-3 px-5 py-5 lg:px-5 ">
+                <div class="flex h-12 w-12 items-center justify-center p-0 h-full w-full lg:p-0 zoom-in">
+                  <img alt="HTML" loading="lazy" decoding="async" data-nimg="1" class="drop-shadow-xl rounded rounded-xl"
+                    :src="item.imageUrl">
+                </div>
+                <div class="w-full flex flex-col gap-2 items-center text-sm md:text-base lg:text-lg">
+                  <div class="title-text font-medium text-secondary">{{ item.name }}
+                  </div>
+                  <div class="w-full text-left text-[10px] text-[#c1c1c1] md:text-xs lg:text-sm">
+                    {{ item.status }}</div>
+                  <div class="w-full mt-4 text-normal text-sm text-left text-amber-200">
+                    {{ item.tech }}
+                  </div>
+                  <div class="w-full flex justify-end">
+                    <div class="flex cursor-pointer items-end gap-2 text-primary">
+                      <a v-if="item.github !== 'null'"
+                        :href="item.github" target="_blank" rel="noreferrer"
+                        title="View github repository" class="transition-all hover:text-accent">
+                        <svg stroke="currentColor"
+                          fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                          height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                          </path>
+                        </svg></a>
+                        <a v-if="item.demo !== 'null'" :href="item.demo" target="_blank" rel="noreferrer"
+                        title="View finished project" class="transition-all hover:text-accent">
+                        <svg stroke="currentColor"
+                          fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                          height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                          <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</div></template>
+
+<style>
+.item-card:hover {
+  transition: transform 0.3s ease;
+  transform: translateY(-8px);
+}
+svg:hover{
+  stroke: #ffdb70;
+}
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Menggunakan animasi pada elemen yang diinginkan */
+.fade-zoom-in {
+  animation: fadeZoomIn 1s ease-in-out;
+}
+</style>
