@@ -10,7 +10,7 @@ export default {
           imageUrl: 'https://i.imgur.com/TMNHek7.png',
           status: 'My personal website, I created this website to display my profile, skills and projects. As well as my place to try new technology.',
           tech: 'VueJS 3, Tailwind',
-          github: 'null',
+          github: 'https://github.com/terris91/portfolio-website',
           demo: 'https://elncqmelhhcm.click/'
         },
         {
